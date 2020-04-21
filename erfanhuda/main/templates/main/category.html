@@ -1,0 +1,38 @@
+{% extends "main/header.html" %}
+{% load static %}
+{% block content%}
+
+  <section id="page-title" class="p-t-500 p-b-500" data-bg-parallax="{% static 'images/pattern-icons/5.png' %}">
+      <div class="bg-overlay"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-20 center text-center text-light">
+                  <h1>Hi! I'm <strong>Erfan Huda</strong></h1>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section id="page-content">
+            <div class="row">
+              <div class="container">
+                  <h1 class="col-lg-20 center text-center text-dark post-navigation"> What I've done so far. </h1>
+                  <br class="lines">
+                   <div class="row container">
+                            {% for cat, partone in part_ones.items %}
+                            <div class="col-md-4 hoverable">
+                                <a href="{{partone}}", style="color:#000">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{cat.series_name}}</h5>
+                                        <p class="card-text">{{cat.series_summary}}</p>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+              </div>
+            </div>
+    </section>
+
+{% endblock%}

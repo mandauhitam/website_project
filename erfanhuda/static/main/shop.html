@@ -1,0 +1,23 @@
+  {% extends "main/header.html" %}
+    {% block content %}
+                    
+    <section id="page-content">
+      <div class="container">
+        <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
+          {% for t in portfolio %}
+            <div class="post-item border">
+                <div class="post-item-wrap">
+                    <div class="post-item-description">
+                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{t.portfolio_published}}</span>
+                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span><span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>Lifestyle</a></span>
+                        <h2><a href="#">{{t.portfolio_title}}</a></h2>
+                        <p>{{t.portfolio_content|safe}}</p>
+                        <a href="#" class="item-link">Read More <i class="icon-chevron-right"></i></a><a href="#" class="post-post-likes"><i class="icon-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endblock %}

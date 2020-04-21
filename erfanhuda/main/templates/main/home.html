@@ -1,0 +1,43 @@
+{% extends "main/header.html" %}
+{% load static %}
+{% block content%}
+
+  <section id="page-title" class="p-t-500 p-b-500" data-bg-parallax="{% static 'images/pattern-icons/5.png' %}">
+      <div class="bg-overlay"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-20 center text-center text-light">
+                  <h1>Hi! <br> Welcome to My <strong>Page</strong></h1>
+              </div>
+          </div>
+      </div>
+  </section>
+      <section id="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="content col-lg-14">
+                      <h1 class="col-lg-20 middle text-center text-dark post-navigation"> What I've done so far. </h1>
+                      <br>
+                        <div class="container p-b-0 post-navigation">
+                          {% for c in portfolio %}
+                            <div class="row m-b-40">
+                                <div class="col-lg-4 sticky-sidebar">
+                                    <div class="portfolio-content" data-lightbox="gallery">
+                                        <a title="{{c.title}}" href="{% get_media_prefix %}{{c.image}}" target="_blank"><img src="{% get_media_prefix %}{{c.image}}" data-animate="swing">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="sidebar offset-1 col-lg-7 project-description" data-animate="bounce">
+                                    <h2 class="m-b-30">{{c.title}}</h2>
+                                    <h3 class="align-right">{{c.content|safe}}</h3>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+{% endblock%}
