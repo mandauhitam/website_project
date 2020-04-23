@@ -6,5 +6,3 @@ def homepage(request):
 
 def about(request):
 	return HttpResponse('Berhasil About')
-
-# Create your views here.
