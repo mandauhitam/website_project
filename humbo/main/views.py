@@ -7,3 +7,6 @@ def homepage(request):
 
 def about(request):
 	return HttpResponse('Berhasil About')
+
+def blog(request):
+	return HttpResponse('Checkpoint Berhasil')
